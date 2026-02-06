@@ -67,7 +67,28 @@
         <div class="cyber-grid cyber-grid-4">
           <div v-for="product in products" :key="product.name" class="cyber-card product-card">
             <div class="product-icon">
-              <component :is="product.icon" />
+              <svg v-if="product.icon === 'atom'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(0 12 12)"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
+              </svg>
+              <svg v-else-if="product.icon === 'scope'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="8"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="12" x2="15" y2="15"/>
+                <line x1="21" y1="21" x2="15.8" y2="15.8"/>
+              </svg>
+              <svg v-else-if="product.icon === 'oil'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 22h20L12 2z"/>
+                <path d="M12 6l-6 12h12L12 6z" fill="currentColor" opacity="0.5"/>
+              </svg>
+              <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 12h4M18 12h4"/>
+                <path d="M12 2v4M12 18v4"/>
+                <circle cx="12" cy="12" r="6"/>
+                <path d="M12 8v8M8 12h8" opacity="0.5"/>
+              </svg>
             </div>
             <h3>{{ product.name }}</h3>
             <p>{{ product.desc }}</p>
@@ -168,25 +189,25 @@ const products = [
     name: '自旋共振系列', 
     desc: '量子精密测量核心设备，纳米级磁场探测',
     path: '/products',
-    icon: 'IconAtom'
+    icon: 'atom'
   },
   { 
     name: '电子显微镜系列', 
     desc: '高分辨电子显微分析系统',
     path: '/products',
-    icon: 'IconMicroscope'
+    icon: 'scope'
   },
   { 
     name: '油气勘探系列', 
     desc: '量子传感油气探测解决方案',
     path: '/products',
-    icon: 'IconOil'
+    icon: 'oil'
   },
   { 
     name: '微弱信号测量', 
     desc: '超灵敏信号检测与分析设备',
     path: '/products',
-    icon: 'IconWave'
+    icon: 'signal'
   },
 ]
 
