@@ -1,13 +1,9 @@
 <template>
-  <div class="news-page"
-    >
+  <div class="news-page">
     <!-- Hero Section -->
-    <section class="page-hero"
-      >
-      <div class="cyber-container"
-        >
-        <div class="page-header"
-          >
+    <section class="page-hero">
+      <div class="cyber-container">
+        <div class="page-header">
           <span class="section-tag">News Center</span>
           
           <h1 class="cyber-title">新闻动态</h1>
@@ -18,19 +14,15 @@
     </section>
     
     <!-- News Filter -->
-    <section class="section filter-section"
-      >
-      <div class="cyber-container"
-        >
-        <div class="filter-bar"
-          >
+    <section class="section filter-section">
+      <div class="cyber-container">
+        <div class="filter-bar">
           <button
               v-for="filter in filters"
               :key="filter.value"
               class="filter-btn"
               :class="{ active: activeFilter === filter.value }"
-              @click="activeFilter = filter.value"
-            >
+              @click="activeFilter = filter.value">
               {{ filter.label }}
             </button>
         </div>
@@ -38,46 +30,32 @@
     </section>
     
     <!-- Featured News -->
-    <section v-if="activeFilter === 'all'" class="section featured-section"
-    >
-      <div class="cyber-container"
-      >
-        <div class="featured-article"
-          >
-          <div class="featured-image"
-            >
-            <div class="image-placeholder"
-              >
-              <div class="placeholder-content"
-              >
-                <div class="featured-icon"
-                >🏆</div>
+    <section v-if="activeFilter === 'all'" class="section featured-section">
+      <div class="cyber-container">
+        <div class="featured-article">
+          <div class="featured-image">
+            <div class="image-placeholder">
+              <div class="placeholder-content">
+                <div class="featured-icon">🏆</div>
               
-                <div class="featured-badge"
-                >重磅</div>
+                <div class="featured-badge">重磅</div>
               </div>
             </div>
           </div>
           
-          <div class="featured-content"
-            >
-            <div class="article-meta"
-            >
-              <span class="article-category"
-            >公司新闻</span>
+          <div class="featured-content">
+            <div class="article-meta">
+              <span class="article-category">公司新闻</span>
               
-              <span class="article-date"
-              >2024-12-15</span>
+              <span class="article-date">2024-12-15</span>
             </div>
             
             <h2>国仪量子荣获2024年度国家科技进步奖</h2>
             
             <p>国仪量子牵头的"量子精密测量关键技术及应用"项目荣获2024年度国家科技进步二等奖，标志着公司在量子精密测量领域的技术实力获得国家级认可...</p>
             
-            <div class="article-actions"
-            >
-              <button class="cyber-btn"
-                >
+            <div class="article-actions">
+              <button class="cyber-btn">
                   <span>阅读全文</span>
                 </button>
             </div>
@@ -87,39 +65,29 @@
     </section>
     
     <!-- News Grid -->
-    <section class="section news-grid-section"
-      >
-      <div class="cyber-container"
-        >
-        <div class="news-grid"
-          >
+    <section class="section news-grid-section">
+      <div class="cyber-container">
+        <div class="news-grid">
           <article
               v-for="article in filteredNews"
               :key="article.id"
-              class="news-card"
-            >
-              <div class="card-image"
-              >
-                <div class="image-placeholder"
-                >
+              class="news-card">
+              <div class="card-image">
+                <div class="image-placeholder">
                   <span>{{ article.emoji }}</span>
                 </div>
                 
-                <div class="card-category"
-                >{{ article.category }}</div>
+                <div class="card-category">{{ article.category }}</div>
               </div>
               
-              <div class="card-content"
-              >
-                <div class="card-date"
-                >{{ article.date }}</div>
+              <div class="card-content">
+                <div class="card-date">{{ article.date }}</div>
                 
                 <h3>{{ article.title }}</h3>
                 
                 <p>{{ article.summary }}</p>
                 
-                <a href="#" class="read-more"
-                >
+                <a href="#" class="read-more">
                   阅读更多
                   <span>→</span>
                 </a>
@@ -128,10 +96,8 @@
         </div>
         
         <!-- Load More -->
-        <div class="load-more"
-          >
-          <button class="cyber-btn"
-            >
+        <div class="load-more">
+          <button class="cyber-btn">
               <span>加载更多</span>
             </button>
         </div>
@@ -139,49 +105,36 @@
     </section>
     
     <!-- Events Section -->
-    <section class="section events-section"
-      >
-      <div class="cyber-container"
-        >
-        <div class="section-header"
-          >
+    <section class="section events-section">
+      <div class="cyber-container">
+        <div class="section-header">
           <span class="section-tag">Events</span>
           
           <h2 class="cyber-title">展会活动</h2>
         </div>
         
-        <div class="events-list"
-          >
-          <div v-for="event in events" :key="event.id" class="event-item"
-            >
-              <div class="event-date"
-              >
-                <div class="date-month"
-                >{{ event.month }}</div>
+        <div class="events-list">
+          <div v-for="event in events" :key="event.id" class="event-item">
+              <div class="event-date">
+                <div class="date-month">{{ event.month }}</div>
                 
-                <div class="date-day"
-                >{{ event.day }}</div>
+                <div class="date-day">{{ event.day }}</div>
               </div>
               
-              <div class="event-content"
-              >
-                <div class="event-tag"
-                >{{ event.type }}</div>
+              <div class="event-content">
+                <div class="event-tag">{{ event.type }}</div>
                 
                 <h3>{{ event.title }}</h3>
                 
                 <p>{{ event.description }}</p>
                 
-                <div class="event-meta"
-                >
+                <div class="event-meta">
                   <span>📍 {{ event.location }}</span>
                 </div>
               </div>
               
-              <div class="event-status"
-              >
-                <span :class="['status-badge', event.status]"
-                >{{ event.statusText }}</span>
+              <div class="event-status">
+                <span :class="['status-badge', event.status]">{{ event.statusText }}</span>
               </div>
             </div>
         </div>

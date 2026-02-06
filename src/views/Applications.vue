@@ -20,15 +20,13 @@
                :class="{ 'featured': app.featured }"
                :style="{ '--accent-color': app.color }"
                @mouseenter="activeApp = app.id"
-               @mouseleave="activeApp = null"
-          >
+               @mouseleave="activeApp = null">
             <div class="card-bg">
               <div class="card-gradient"></div>
               <div class="card-pattern"></div>
             </div>
             
-            <div class="card-content"
-              >
+            <div class="card-content">
               <div class="card-header">
                 <div class="app-icon">{{ app.emoji }}</div>
                 <div class="app-number">0{{ idx + 1 }}</div>
@@ -39,33 +37,28 @@
               <p class="app-desc">{{ app.description }}</p>
               
               <div class="app-stats">
-                <div v-for="stat in app.stats" :key="stat.label" class="app-stat"
-                  >
+                <div v-for="stat in app.stats" :key="stat.label" class="app-stat">
                   <span class="stat-num">{{ stat.value }}</span>
                   <span class="stat-name">{{ stat.label }}</span>
                 </div>
               </div>
               
-              <div class="app-uses"
-                >
+              <div class="app-uses">
                 <h4>典型应用</h4>
                 <ul>
                   <li v-for="use in app.useCases" :key="use">{{ use }}</li>
                 </ul>
               </div>
               
-              <div class="card-footer"
-              >
-                <router-link to="/products" class="app-link"
-                  >
+              <div class="card-footer">
+                <router-link to="/products" class="app-link">
                   相关产品
                   <span class="arrow">→</span>
                 </router-link>
               </div>
             </div>
             
-            <div class="card-effects"
-            >
+            <div class="card-effects">
               <div class="effect-line effect-line-h"></div>
               <div class="effect-line effect-line-v"></div>
               <div class="corner-glow"></div>
@@ -78,33 +71,27 @@
     <!-- Case Studies Section -->
     <section class="section cases-section">
       <div class="cyber-container">
-        <div class="section-header"
-        >
+        <div class="section-header">
           <span class="section-tag">Success Stories</span>
           <h2 class="cyber-title">成功案例</h2>
         </div>
         
-        <div class="cases-slider"
-        >
-          <div v-for="caseItem in caseStudies" :key="caseItem.id" class="case-card"
-            >
-            <div class="case-image"
-            >
+        <div class="cases-slider">
+          <div v-for="caseItem in caseStudies" :key="caseItem.id" class="case-card">
+            <div class="case-image">
               <div class="case-placeholder">
                 <div class="case-icon">{{ caseItem.emoji }}</div>
               </div>
             </div>
             
-            <div class="case-content"
-            >
+            <div class="case-content">
               <div class="case-tag">{{ caseItem.field }}</div>
               
               <h3>{{ caseItem.title }}</h3>
               
               <p>{{ caseItem.description }}</p>
               
-              <div class="case-meta"
-              >
+              <div class="case-meta">
                 <span>{{ caseItem.institution }}</span>
               </div>
             </div>
@@ -114,25 +101,19 @@
     </section>
     
     <!-- CTA Section -->
-    <section class="section cta-section"
-    >
-      <div class="cyber-container"
-      >
-        <div class="cyber-frame cta-box"
-        >
+    <section class="section cta-section">
+      <div class="cyber-container">
+        <div class="cyber-frame cta-box">
           <h2>寻找适合您的解决方案？</h2>
           
           <p>我们的技术专家团队将为您提供专业的咨询与方案定制服务</p>
           
-          <div class="cta-actions"
-          >
-            <router-link to="/contact" class="cyber-btn cyber-btn-primary"
-              >
+          <div class="cta-actions">
+            <router-link to="/contact" class="cyber-btn cyber-btn-primary">
               <span>联系咨询</span>
             </router-link>
             
-            <router-link to="/products" class="cyber-btn"
-              >
+            <router-link to="/products" class="cyber-btn">
               <span>浏览产品</span>
             </router-link>
           </div>

@@ -80,8 +80,7 @@
           <div class="products-grid">
             <div v-for="product in semProducts" :key="product.model" class="product-item">
               <div class="product-image">
-                <div class="image-placeholder sem-style"
->
+                <div class="image-placeholder sem-style">
                   <div class="placeholder-content">
                     <div class="microscope-icon">🔬</div>
                     <div class="model-badge">{{ product.model }}</div>
@@ -174,8 +173,7 @@
             <div v-for="product in signalProducts" :key="product.model" class="product-item">
               <div class="product-image">
                 <div class="image-placeholder signal-style">
-                  <div class="placeholder-content"
->
+                  <div class="placeholder-content">
                     <div class="signal-waves">
                       <div v-for="n in 3" :key="n" class="wave-ring"></div>
                     </div>
